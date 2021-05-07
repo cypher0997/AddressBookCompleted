@@ -1,7 +1,5 @@
 package addressBook;
 
-import java.util.Scanner;
-
 public class AddContact {
     private String FirstName;
     private String LastName;
@@ -25,6 +23,10 @@ public class AddContact {
         this.PhoneNumber = phoneNumber;
     }
 
+    public String getFirstName() {
+        return this.FirstName;
+    }
+
     public void display(int take) {
 
         System.out.println("the contact person number:"+ take);
@@ -36,4 +38,5 @@ public class AddContact {
         System.out.println("Zip: "+this.Zip);
         System.out.println("PhoneNumber: "+this.PhoneNumber);
     }
+
 }
