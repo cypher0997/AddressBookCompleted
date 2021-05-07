@@ -9,7 +9,10 @@ public class Main {
         storeMultiple_Contact.AddContactRefactored();
         System.out.println("enter 0 to pass this section, enter 1 to edit details, enter 2 to delete contact");
         int input = choice.nextInt();
-        if(input == 1) {
+        if(input == 0) {
+            System.out.println("execution ends,all details added successfully");
+        }
+        else if(input == 1) {
            storeMultiple_Contact.editContactPersonDetail();
         }
         else if(input == 2){
