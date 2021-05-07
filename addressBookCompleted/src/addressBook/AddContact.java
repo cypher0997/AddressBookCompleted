@@ -1,37 +1,39 @@
 package addressBook;
 
-public class AddContact {
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String city;
-    private String state;
-    private int zip;
-    private String phoneNumber;
-    private String email;
+import java.util.Scanner;
 
-    public AddContact(String firstName,String lastName,String address,String city,String state,String email,
-                    int zip,String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+public class AddContact {
+    private String FirstName;
+    private String LastName;
+    private String Address;
+    private String City;
+    private String State;
+    private int Zip;
+    private String PhoneNumber;
+
+    public AddContact() {
+        //pass
     }
-   
-   
-    public void display(){
-        System.out.println("FirstName: "+this.firstName);
-        System.out.println("LastName: "+this.lastName);
-        System.out.println("Address: "+this.address);
-        System.out.println("City: "+this.city);
-        System.out.println("State: "+this.state);
-        System.out.println("Zip: "+this.zip);
-        System.out.println("PhoneNumber: "+this.phoneNumber);
-        System.out.println("Email: "+this.email);
-      
+    public AddContact(String firstName,String lastName,String address,String city,String state,
+                    int zip,String phoneNumber) {
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Address = address;
+        this.City = city;
+        this.State = state;
+        this.Zip = zip;
+        this.PhoneNumber = phoneNumber;
+    }
+
+    public void display(int take) {
+
+        System.out.println("the contact person number:"+ take);
+        System.out.println("FirstName: "+this.FirstName);
+        System.out.println("LastName: "+this.LastName);
+        System.out.println("Address: "+this.Address);
+        System.out.println("City: "+this.City);
+        System.out.println("State: "+this.State);
+        System.out.println("Zip: "+this.Zip);
+        System.out.println("PhoneNumber: "+this.PhoneNumber);
     }
 }

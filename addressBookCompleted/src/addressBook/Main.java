@@ -1,9 +1,8 @@
 package addressBook;
 
 public class Main {
-    public static void main(String args[]){
-        System.out.println("welcome to addressBook");
-        AddContact toAddPersonContact = new AddContact("anurag","bhardwaj","N/a","jaipur","rajasthan","anuragcypher@gmail.com",303002,"6350391128");
-        toAddPersonContact.display();
+    public static void main(String args[]) {
+        StoringMultipleContact storeMultiple_Contact = new StoringMultipleContact();
+        storeMultiple_Contact.AddContactRefactored();  
     }
 }
