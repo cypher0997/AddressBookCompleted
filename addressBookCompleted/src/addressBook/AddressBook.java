@@ -90,6 +90,12 @@ public class AddressBook {
         }
         return(det);
     }
+
+    public List<AddressBook> ret1(){
+        List<AddressBook> temp = new ArrayList<>();
+        temp.add((AddressBook) ret());
+        return (temp);
+    }
    
     public void editConatact() {
         Scanner choices = new Scanner(System.in);

@@ -1,13 +1,15 @@
 package addressBook;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class AddressBooksDictionary {
     AddressBook addressBook;
-    Map<Integer,AddressBook> dictionary;
+    Map<Integer,List<ContactDetails>>  dictionary;
     public void createMultipleAddressBooks() {
+        System.out.println("enter the number of,how many addressBook u want to store");
         Scanner numberOfAddressBook = new Scanner(System.in);
         int Count = numberOfAddressBook.nextInt();
         System.out.println("dictionary contains:"+" "+Count+" "+"addressbooks");
@@ -15,12 +17,28 @@ public class AddressBooksDictionary {
         for(int i = 0;i<Count;i++) {
             addressBook = new AddressBook(i);
             System.out.println("u are in addressbook number :"+" "+i);
-            addressBook.ret();
-            dictionary.put(i,addressBook);
+            dictionary.put(i,addressBook.ret());
         }
-        for(AddressBook value: dictionary.values()){
-            System.out.println(value);
+        
+    }
+
+    public void editConatactsOfAddressBook_InDictionary() {
+        System.out.println("enter the name ,for which u want to edit details for");
+        Scanner nameToChange = new Scanner(System.in);
+        String in = nameToChange.nextLine();
+        for(int i = 0;i<dictionary.size();i++) {
+            for(int j = 0;j<dictionary.get(i).size();j++) {
+                if(dictionary.get(i).get(j).getFirstName().equals(in)) {
+                    addressBook.setDetails();
+                    addressBook.det.add(j,addressBook.settingContactPersons );
+                    break;
+                }
+            }
         }
+    }
+
+    public void displayDictionary(){
+        System.out.print(dictionary);
     }
 
 }
