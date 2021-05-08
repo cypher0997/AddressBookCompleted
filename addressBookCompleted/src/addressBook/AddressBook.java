@@ -46,6 +46,14 @@ public class AddressBook {
 
         System.out.print("Enter FirstName  : ");
         String firstName = takeInput.nextLine();
+        for(int i =0;i<det.size();i++) {  
+            if(firstName.equals(det.get(i).getFirstName())){ 
+                System.out.println("name duplicacy detected, name already present,give another name");
+                Scanner sc = new Scanner(System.in);
+                String firstNameRechecked = sc.nextLine();
+                firstName = firstNameRechecked;
+            }
+        }
         
         System.out.print("Enter LastName  : ");
         String lastName =takeInput.nextLine();
@@ -91,12 +99,6 @@ public class AddressBook {
         return(det);
     }
 
-    public List<AddressBook> ret1(){
-        List<AddressBook> temp = new ArrayList<>();
-        temp.add((AddressBook) ret());
-        return (temp);
-    }
-   
     public void editConatact() {
         Scanner choices = new Scanner(System.in);
         Scanner inputs = new Scanner(System.in);
