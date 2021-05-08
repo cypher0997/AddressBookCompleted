@@ -7,13 +7,25 @@ import java.util.Scanner;
 public class AddressBook {
 
     int id = 0;
+    int count =0;
 
-    /*following method is used ask number of user to be stored*/
+    /*following method is used to enter the ,number of user to be stored*/
     public int numberOfUser() {
+        int num = 0;
         System.out.println("enter the number of users u want to store");
         Scanner numberOfUsers = new Scanner(System.in);
-        int num = numberOfUsers.nextInt();
-        return num;
+        try {
+            num = Integer.parseInt(numberOfUsers.nextLine());
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Error! Invalid integer. Try again.");
+            
+            if(count<3){
+                count++;
+                numberOfUser();
+            }
+        }
+        return num;        
     }
 
     List<ContactDetails> det = new ArrayList<>();
@@ -42,12 +54,17 @@ public class AddressBook {
         String phoneNumber =takeInput.nextLine();
         
         System.out.print("Enter Zip : ");
-        int zip =takeInput.nextInt();
-
+        String zip = takeInput.nextLine();
+        int check = 0;
+        try {
+            check = Integer.parseInt(zip);
+        } catch (NumberFormatException e) {
+            System.out.println("Error! Invalid input");
+        }
         System.out.print(" ");
 
         id++;
-        settingContactPersons = new ContactDetails(firstName,lastName,address,city,state,zip,phoneNumber,id);
+        settingContactPersons = new ContactDetails(firstName,lastName,address,city,state,check,phoneNumber,id);
     }
 
 
