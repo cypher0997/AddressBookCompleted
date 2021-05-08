@@ -7,7 +7,16 @@ import java.util.Scanner;
 public class AddressBook {
 
     int id = 0;
-    int count =0;
+    int count = 0;
+    int addressBookNumber = 0;
+
+    AddressBook(){
+        // pass
+    }
+
+    AddressBook(int take){
+        this.addressBookNumber = take;
+    }
 
     /*following method is used to enter the ,number of user to be stored*/
     public int numberOfUser() {
@@ -69,7 +78,7 @@ public class AddressBook {
 
 
     /*this method is main execution sequence */
-    public void ret() {
+    public List<ContactDetails> ret() {
         int numberOfUser = numberOfUser();
         for(int i = 0;i<numberOfUser;i++) {
             System.out.println("enter th detail of user:"+i);
@@ -79,7 +88,7 @@ public class AddressBook {
                 break;
             }
         }
-        System.out.println(det);
+        return(det);
     }
    
     public void editConatact() {
@@ -111,4 +120,12 @@ public class AddressBook {
             System.out.println(det);
         }
     }
+
+
+    @Override
+    public String toString() {
+        return "AddressBook="+this.addressBookNumber+"[" + det + "]";
+    }
+    
+    
 }
