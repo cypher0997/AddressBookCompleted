@@ -18,25 +18,6 @@ public class AddressBook {
         this.addressBookNumber = take;
     }
 
-    /*following method is used to enter the ,number of user to be stored*/
-    public int numberOfUser() {
-        int num = 0;
-        System.out.println("enter the number of users u want to store");
-        Scanner numberOfUsers = new Scanner(System.in);
-        try {
-            num = Integer.parseInt(numberOfUsers.nextLine());
-        }
-        catch (NumberFormatException e) {
-            System.out.println("Error! Invalid integer. Try again.");
-            
-            if(count<3){
-                count++;
-                numberOfUser();
-            }
-        }
-        return num;        
-    }
-
     List<ContactDetails> det = new ArrayList<>();
 
     ContactDetails settingContactPersons;
@@ -87,14 +68,23 @@ public class AddressBook {
 
     /*this method is main execution sequence */
     public List<ContactDetails> ret() {
-        int numberOfUser = numberOfUser();
-        for(int i = 0;i<numberOfUser;i++) {
-            System.out.println("enter th detail of user:"+i);
-            setDetails();
-            while(true) {
-                det.add(settingContactPersons);
-                break;
+        int num = 0;
+        System.out.println("enter the number of users u want to store");
+        Scanner numberOfUsers = new Scanner(System.in);
+        try {
+            num = Integer.parseInt(numberOfUsers.nextLine());
+            int numberOfUser = num;
+            for(int i = 0;i<numberOfUser;i++) {
+                System.out.println("enter th detail of user:"+i);
+                setDetails();
+                while(true) {
+                    det.add(settingContactPersons);
+                    break;
+                }
             }
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Error! Invalid value,execution will Stop here");
         }
         return(det);
     }

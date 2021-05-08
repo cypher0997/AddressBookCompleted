@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddressBooksDictionary {
+import addressBook.SearchFacility.SearchPersonByCity;
+import addressBook.SearchFacility.SearchPersonByState;
+
+public class AddressBooksDictionary implements SearchPersonByCity,SearchPersonByState {
     AddressBook addressBook;
     Map<Integer,List<ContactDetails>>  dictionary;
     public void createMultipleAddressBooks() {
@@ -32,6 +35,34 @@ public class AddressBooksDictionary {
                     addressBook.setDetails();
                     addressBook.det.add(j,addressBook.settingContactPersons );
                     break;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void personView_byCity() {
+        System.out.println("enter the name of city,to search for persons belong to that city");
+        Scanner cityToSearchFor = new Scanner(System.in);
+        String in = cityToSearchFor.nextLine();
+        for(int i = 0;i<dictionary.size();i++) {
+            for(int j = 0;j<dictionary.get(i).size();j++) {
+                if(((dictionary.get(i)).get(j)).getCity().equals(in)) {
+                    System.out.println("AddressBook : "+i+(dictionary.get(i)).get(j));
+                }
+            }
+        }
+    }
+
+    @Override
+    public void personView_byState() {
+        System.out.println("enter the name of ,to search for persons belong to that State");
+        Scanner stateToSearchFor = new Scanner(System.in);
+        String in = stateToSearchFor.nextLine();
+        for(int i = 0;i<dictionary.size();i++) {
+            for(int j = 0;j<dictionary.get(i).size();j++) {
+                if(((dictionary.get(i)).get(j)).getState().equals(in)) {
+                    System.out.println("AddressBook : "+i+(dictionary.get(i)).get(j));
                 }
             }
         }

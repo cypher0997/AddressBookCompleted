@@ -39,9 +39,12 @@ public class ContactDetails {
     public String getFirstName() {
         return firstName;
     }
+    public String getCity() {
+        return city;
+    }
     
-
-    
-
+    public String getState() {
+        return state;
+    }
 
 }
