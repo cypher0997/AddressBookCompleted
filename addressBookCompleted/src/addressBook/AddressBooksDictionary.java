@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import addressBook.SearchFacility.SearchPersonByCity;
-import addressBook.SearchFacility.SearchPersonByState;
+import addressBook.searchFacility.Searchable;
 
-public class AddressBooksDictionary implements SearchPersonByCity,SearchPersonByState {
+
+
+public class AddressBooksDictionary implements Searchable {
     AddressBook addressBook;
     Map<Integer,List<ContactDetails>>  dictionary;
     public void createMultipleAddressBooks() {
@@ -49,6 +50,8 @@ public class AddressBooksDictionary implements SearchPersonByCity,SearchPersonBy
             for(int j = 0;j<dictionary.get(i).size();j++) {
                 if(((dictionary.get(i)).get(j)).getCity().equals(in)) {
                     System.out.println("AddressBook : "+i+(dictionary.get(i)).get(j));
+                    System.out.println("number od users brlong to " + in + "is" + j+1);
+                    System.out.println(" ");
                 }
             }
         }
@@ -63,6 +66,8 @@ public class AddressBooksDictionary implements SearchPersonByCity,SearchPersonBy
             for(int j = 0;j<dictionary.get(i).size();j++) {
                 if(((dictionary.get(i)).get(j)).getState().equals(in)) {
                     System.out.println("AddressBook : "+i+(dictionary.get(i)).get(j));
+                    System.out.println("number od users brlong to " + in + "is" + j+1);
+                    System.out.println(" ");
                 }
             }
         }
@@ -70,6 +75,7 @@ public class AddressBooksDictionary implements SearchPersonByCity,SearchPersonBy
 
     public void displayDictionary(){
         System.out.print(dictionary);
+        System.out.println(" ");
     }
 
 }

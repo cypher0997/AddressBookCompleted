@@ -16,9 +16,7 @@ public class Main {
             //pass
         }
         addressBookDictionary.displayDictionary();
-        System.out.println(" ");
         addressBookDictionary.personView_byCity();
-        System.out.println(" ");
         addressBookDictionary.personView_byState();
     }
 }
