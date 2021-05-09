@@ -6,5 +6,6 @@ import java.util.Map;
 import addressBook.ContactDetails;
 
 public interface Writeable {
-    void writeFile(Map<Integer, List<ContactDetails>> take);
+    void writeTxtFile(Map<String, List<ContactDetails>> take);
+    void writeCsvFile(Map<String, List<ContactDetails>> take);
 }

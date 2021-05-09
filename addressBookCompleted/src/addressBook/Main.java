@@ -28,10 +28,13 @@ public class Main {
         
         addressBookDictionary.displayDictionary();
         addressBookDictionary.personView_byCityOrState();
-        Map<Integer, List<ContactDetails>> se = addressBookDictionary.getDictionary();
+        Map<String,List<ContactDetails>> se = addressBookDictionary.getDictionary();
 
         FileIOStreamOperations fileIOStreamOperations = new FileIOStreamOperations();
-        fileIOStreamOperations.writeFile(se);
-        fileIOStreamOperations.readFile();
+        fileIOStreamOperations.writeTxtFile(se);
+        fileIOStreamOperations.readTxtFile();
+        fileIOStreamOperations.writeCsvFile(se);
+        fileIOStreamOperations.readCsvFile();
+        
     }
 }

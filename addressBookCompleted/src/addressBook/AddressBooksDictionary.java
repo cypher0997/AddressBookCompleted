@@ -11,7 +11,7 @@ import addressBook.searchFacility.Searchable;
 
 public class AddressBooksDictionary implements Searchable {
     AddressBook addressBook;
-    public Map<Integer,List<ContactDetails>>  dictionary;
+    public Map<String,List<ContactDetails>>  dictionary;
     public void createMultipleAddressBooks() {
         System.out.println("enter the number of,how many addressBook u want to store");
         Scanner numberOfAddressBook = new Scanner(System.in);
@@ -21,7 +21,8 @@ public class AddressBooksDictionary implements Searchable {
         for(int i = 0;i<Count;i++) {
             addressBook = new AddressBook(i);
             System.out.println("u are in addressbook number :"+" "+i);
-            dictionary.put(i,addressBook.ret());
+            String inew = String.valueOf(i);
+            dictionary.put(inew,addressBook.ret());
         }
         
     }
@@ -85,11 +86,11 @@ public class AddressBooksDictionary implements Searchable {
     }
 
     public void displayDictionary(){
-        System.out.print(dictionary);
-        System.out.println(" ");
+        for (Map.Entry<String,List<ContactDetails>> entry : dictionary.entrySet())
+            System.out.println("AddressBook = " + entry.getKey() + entry.getValue());
     }
 
-    public Map<Integer, List<ContactDetails>> getDictionary() {
+    public Map<String, List<ContactDetails>> getDictionary() {
         return dictionary;
     }
 
