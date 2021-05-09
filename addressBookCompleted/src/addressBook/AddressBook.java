@@ -1,8 +1,6 @@
 package addressBook;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -90,37 +88,6 @@ public class AddressBook {
         }
         return(det);
     }
-
-    public void editConatact() {
-        Scanner choices = new Scanner(System.in);
-        Scanner inputs = new Scanner(System.in);
-        System.out.println("press 1 to edit contact"+ "\n" + "press 2 for deleting contact");
-        int choice = choices.nextInt();
-        if(choice == 1) {
-            System.out.println("enter the name of person u want to edit details for:");
-            String in = inputs.nextLine();
-            for(int i = 0;i<det.size();i++) {
-                if((det.get(i)).getFirstName().equals(in)){
-                    setDetails();
-                    det.add(i,settingContactPersons);
-                    break;
-                }
-            }
-            System.out.println(det);
-        }
-        else if(choice == 2){
-            System.out.println("enter the name of person u want to delete details for:");
-            String in = inputs.nextLine();
-            for(int i = 0;i<det.size();i++) {
-                if((det.get(i)).getFirstName().equals(in)){
-                    det.remove(i);
-                    break;
-                }
-            }
-            System.out.println(det);
-        }
-    }
-
 
     @Override
     public String toString() {
