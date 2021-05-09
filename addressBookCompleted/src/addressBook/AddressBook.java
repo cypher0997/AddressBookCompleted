@@ -10,7 +10,7 @@ public class AddressBook {
     int count = 0;
     int addressBookNumber = 0;
 
-    AddressBook(){
+    public AddressBook(){
         // pass
     }
 
@@ -65,7 +65,6 @@ public class AddressBook {
         settingContactPersons = new ContactDetails(firstName,lastName,address,city,state,check,phoneNumber,id);
     }
 
-
     /*this method is main execution sequence */
     public List<ContactDetails> ret() {
         int num = 0;
@@ -85,6 +84,7 @@ public class AddressBook {
         }
         catch (NumberFormatException e) {
             System.out.println("Error! Invalid value,execution will Stop here");
+            ret();
         }
         return(det);
     }
